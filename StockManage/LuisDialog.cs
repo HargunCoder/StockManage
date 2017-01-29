@@ -1,4 +1,6 @@
-﻿using Microsoft.Bot.Builder.Dialogs;
+﻿using Chronic.Handlers;
+using Microsoft.Azure;
+using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using System;
