@@ -130,7 +130,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LUIS.cs" />
+    <Compile Include="LuisDialog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YahooFinanceAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
