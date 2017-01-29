@@ -9,6 +9,7 @@ using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 using Newtonsoft.Json;
 using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Builder.Resource;
 using System.Web.Configuration;
 
 namespace StockManage
