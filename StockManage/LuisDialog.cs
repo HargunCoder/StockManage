@@ -17,22 +17,27 @@ namespace StockManage
             await context.PostAsync($"Sorry, I don't understand {result.Query}.");
             context.Wait(this.MessageReceived);
         }
+
         [LuisIntent("StockPrice")]
         public async Task StockIntent(IDialogContext context, LuisResult result)
         {
             EntityRecommendation STOCK;
-            if(result.TryFindEntity("Equity", out STOCK))
+            if (result.TryFindEntity("Equity", out STOCK))
             {
-                await YahooFinanceAPI.getStockData(STOCK);
+                string symbol = STOCK.Entity;
+                string message  = await YahooFinanceAPI.getStockData(context, symbol);
+                await context.PostAsync($"{message}");
             }
             context.Wait(this.MessageReceived);
         }
+
         [LuisIntent ("Pleasentries")]
         public async Task HiIntent(IDialogContext context, LuisResult result)
         {
             await context.PostAsync($"Hello");
             context.Wait(this.MessageReceived);
         }
+
         [LuisIntent("AddNewStock")]
         public async Task AddNewStockIntent(IDialogContext context, LuisResult result)
         {
@@ -44,6 +49,7 @@ namespace StockManage
             }
             context.Wait(this.MessageReceived);
         }
+
         [LuisIntent("SellStock")]
         public async Task SellStockIntent(IDialogContext context, LuisResult result)
         {
